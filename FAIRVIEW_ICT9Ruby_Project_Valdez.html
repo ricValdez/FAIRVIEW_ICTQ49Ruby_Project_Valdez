@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 16: Convert Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"> 
+            <a class="navbar-brand text-light">Unit Converter</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
+            </ul>
+            </nav>
+    <style>
+body {
+  background-image: url('meter-to-millimeter-conversion-scale-removebg-preview.png');
+}
+</style>
+<div class="container container1 form-control">
+    <h1 class="text-center" align="text-center">Unit Converter</h1>
+    <div class="row row1">
+        <label>
+            <h3>Millimeter Converter</h3>
+        </label>
+    </div>
+    <div class="row align-items-center row2">
+        <div class="col-md-5">
+            <label for="">
+                Desired Value:
+                <br>
+            </label>
+            <input type="number" class="form-control" name="millimeter" id="millimeter" placeholder="Millimeter" oninput="updateConversion();">
+        </div>
+        <div class="col-md-2 col2">
+            <h1 class="text-center">=</h1>
+        </div>
+        <div class="col-md-5">
+            <label for="">
+                Converted Value:
+            </label>
+            <input type="number" class="form-control" name="output" id="output" disabled>
+        </div>
+    </div>
+    <div class="row align-items-center row3">
+        <div class="col-md-4">
+            <br><button class="btn-danger" onclick="convertToCentimeters();">To Centimeters</button>
+        </div>
+        <div class="col-md-4">
+            <br><button class="btn-warning" onclick="convertToMeters();">To Meters</button>
+        </div>
+        <div class="col-md-4">
+            <br><button class="btn-primary" onclick="convertToKilometers();">To Kilometers</button>
+        </div>
+    </div>
+</div>
+<script src="js/bootstrap.bundle.js"></script>
+<script>
+    function updateConversion() {
+        var millimeter = document.getElementById("millimeter").value;
+        convertToCentimeters(millimeter);
+    }
+
+    function convertToCentimeters(millimeter) {
+        var centimeters = millimeter / 10;
+        document.getElementById("output").value = centimeters;
+    }
+
+    function convertToMeters() {
+        var millimeter = document.getElementById("millimeter").value;
+        var meters = millimeter / 1000;
+        document.getElementById("output").value = meters;
+    }
+
+    function convertToKilometers() {
+        var millimeter = document.getElementById("millimeter").value;
+        var kilometers = millimeter / 1000000;
+        document.getElementById("output").value = kilometers;
+    }
+</script>
+</body>
+</html>
